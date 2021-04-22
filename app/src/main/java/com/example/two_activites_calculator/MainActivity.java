@@ -248,7 +248,6 @@ public class MainActivity extends AppCompatActivity {
                 if ( text.endsWith("+") || text.endsWith("-") || text.endsWith("*") || text.endsWith("/"))
                 {
                     et.setText(Integer.toString(result));
-                    firstPress = true;
                 }
                 else
                     {
@@ -272,7 +271,7 @@ public class MainActivity extends AppCompatActivity {
                         et.setText(Integer.toString(result));
 
                     }
-
+                 firstPress = true;
 
             }
 
