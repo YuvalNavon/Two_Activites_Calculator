@@ -32,8 +32,15 @@ public class MainActivity extends AppCompatActivity {
         recentResult = fromcred.getIntExtra("sameresult",0);
         if (recentResult==0) et.setText("");
         else et.setText(Integer.toString(recentResult));
+        text = et.getText().toString();
         Syntax = false;
         firstPress = true;
+        if (text.length() == 0)
+        {
+            Syntax = false;
+            firstPress = true;
+        }
+
 
     }
 
@@ -44,10 +51,16 @@ public class MainActivity extends AppCompatActivity {
             Syntax = true;
             et.setText(Integer.toString(result) + lastPressed + "+");
         }
+        if (text.length() == 0)
+        {
+            Syntax = true;
+            et.setText("+");
+        }
         if (Syntax == false)
         {
             if (firstPress == false)
             {
+
                 signIndex = text.indexOf(lastPressed);
                 result = Integer.parseInt(text.substring(0,signIndex));
                 secondNum = Integer.parseInt(text.substring(signIndex+1));
@@ -75,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
             {
                 firstPress = false;
                 result = Integer.parseInt(text.substring(0));
-                et.setText( Integer.toString(result)+ "+");
+                et.setText(Integer.toString(result)+ "+");
             }
         }
 
@@ -93,6 +106,11 @@ public class MainActivity extends AppCompatActivity {
         {
             Syntax = true;
             et.setText(Integer.toString(result) + lastPressed + "-");
+        }
+        if (text.length() == 0)
+        {
+            Syntax = true;
+            et.setText("-");
         }
         if (Syntax == false)
         {
@@ -141,6 +159,11 @@ public class MainActivity extends AppCompatActivity {
             Syntax = true;
             et.setText(Integer.toString(result) + lastPressed + "*");
         }
+        if (text.length() == 0)
+        {
+            Syntax = true;
+            et.setText("*");
+        }
         if (Syntax == false)
         {
             if (firstPress == false)
@@ -187,6 +210,11 @@ public class MainActivity extends AppCompatActivity {
         {
             Syntax = true;
             et.setText(Integer.toString(result) + lastPressed + "/");
+        }
+        if (text.length() == 0)
+        {
+            Syntax = true;
+            et.setText("/");
         }
         if (Syntax == false)
         {
